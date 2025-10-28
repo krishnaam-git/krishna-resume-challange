@@ -1,0 +1,69 @@
+body {
+  font-family: 'Inter', Arial, sans-serif;
+  color: #222;
+  background-color: #fafafa;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+.header {
+  text-align: center;
+  background: #1a1a1a;
+  color: white;
+  padding: 2rem 1rem;
+}
+
+.profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  margin-bottom: 1rem;
+  object-fit: cover;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+h1, h2, h3 {
+  color: #1a1a1a;
+}
+
+h3 {
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 4px;
+}
+
+.job {
+  margin-bottom: 1.5rem;
+}
+
+.duration {
+  color: #666;
+  font-size: 0.9em;
+}
+
+.skills-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  list-style: none;
+  padding: 0;
+}
+
+.skills-list li {
+  background: #e0e0e0;
+  padding: 5px 10px;
+  border-radius: 5px;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  background: #1a1a1a;
+  color: white;
+  font-size: 0.9em;
+}
