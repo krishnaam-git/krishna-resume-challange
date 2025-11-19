@@ -1,4 +1,4 @@
-name : upload cloud_resume website to s3
+name : upload krishna resume website to s3
 
 on:
   push:
