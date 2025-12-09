@@ -26,4 +26,20 @@ Compute: The Gateway triggers an AWS Lambda function written in Python.
 Database Interaction: The Lambda function uses the boto3 library to communicate with Amazon DynamoDB. It performs an atomic update operation to increment the visitor count field and returns the updated value.
 Response: The count travels back through the Lambda > API Gateway > Browser chain and is updated in the HTML DOM for the user to see.
 
+Infrastructure & Automation
+This project follows DevOps best practices, ensuring no manual configuration is done in the AWS Console.
+Infrastructure as Code (IaC)
+All AWS resources (S3, CloudFront, DynamoDB, API Gateway, Lambda) are defined as code using AWS SAM (Serverless Application Model).
+This ensures the infrastructure is reproducible, version-controlled, and modular.
+CI/CD Pipelines (GitHub Actions)
+I have set up two separate Continuous Integration/Continuous Deployment workflows:
+Frontend Pipeline:
+Triggers on changes to the HTML/CSS code.
+Automatically syncs files to the S3 bucket.
+Invalidates the CloudFront cache to ensure users see the latest version immediately.
+Backend Pipeline:
+Triggers on changes to the Python code or SAM template.
+Runs a Python Unit Test suite to verify the Lambda logic works as expected.
+Builds and deploys the updated CloudFormation stack to AWS.
+
 
