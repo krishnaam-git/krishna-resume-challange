@@ -1,10 +1,3 @@
-# ☁️ AWS Cloud Resume Challenge
-
-![AWS](https://img.shields.io/badge/AWS-100000?style=for-the-badge&logo=amazon-web-services&logoColor=white)
-![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
-![Terraform/SAM](https://img.shields.io/badge/IaC-Serverless-blue?style=for-the-badge)
-![GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
-
 ## 📖 Project Overview
 
 This repository contains the source code and infrastructure definitions for my serverless cloud resume. This project was built as part of the **Cloud Resume Challenge**, a hands-on project designed to bridge the gap between certification and actual cloud experience.
