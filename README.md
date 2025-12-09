@@ -1,3 +1,11 @@
+# ☁️ AWS Cloud Resume Challenge
+
+![AWS](https://img.shields.io/badge/AWS-100000?style=for-the-badge&logo=amazon-web-services&logoColor=white)
+![Python](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white)
+![Terraform/SAM](https://img.shields.io/badge/IaC-Serverless-blue?style=for-the-badge)
+![GitHub Actions](https://img.shields.io/badge/CI%2FCD-GitHub%20Actions-2088FF?style=for-the-badge&logo=github-actions&logoColor=white)
+
+
 ## 📖 Project Overview
 
 This repository contains the source code and infrastructure definitions for my serverless cloud resume. This project was built as part of the **Cloud Resume Challenge**, a hands-on project designed to bridge the gap between certification and actual cloud experience.
@@ -9,7 +17,6 @@ The project demonstrates a full-stack serverless application deployed on AWS, ut
 ## 🏗️ Architecture Design
 
 The application uses a serverless event-driven architecture. Below is a high-level overview of how the components interact:
-
 
 <img width="2076" height="1278" alt="mermaid-diagram-2025-12-09-232753" src="https://github.com/user-attachments/assets/655a71a2-25ea-4274-aff6-3180824b89b3" />
 
