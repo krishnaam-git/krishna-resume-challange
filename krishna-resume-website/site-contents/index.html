@@ -1,95 +1,336 @@
-	<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Krishna AM – Resume</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="assets/favicon.ico" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Krishna AM - Cloud Resume</title>
+    <style>
+        /* General Page Reset */
+        body {
+            background-color: #f4f4f4;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            color: #333;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* The "Paper" Container */
+        .resume-container {
+            background-color: white;
+            width: 100%;
+            max-width: 850px;
+            margin: 0 auto;
+            padding: 40px 50px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            box-sizing: border-box;
+            /* Ensure footer stays at bottom if content is short */
+            min-height: 1000px; 
+            position: relative;
+        }
+
+        /* Header Section */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 20px;
+        }
+
+        .header-left h1 {
+            color: #174ea6;
+            font-size: 32px;
+            margin: 0 0 5px 0;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .header-left h2 {
+            font-size: 18px;
+            font-weight: 500;
+            color: #0f3c66;
+            margin: 0 0 5px 0;
+        }
+
+        .header-left .subtitle {
+            font-style: italic;
+            font-size: 14px;
+            color: #555;
+        }
+
+        .header-right {
+            text-align: right;
+            font-size: 14px;
+            line-height: 1.5;
+            color: #174ea6;
+        }
+
+        .header-right a {
+            color: #174ea6;
+            text-decoration: none;
+        }
+
+        hr {
+            border: 0;
+            border-top: 2px solid #333;
+            margin: 20px 0;
+        }
+
+        /* Summary */
+        .summary {
+            font-size: 15px;
+            margin-bottom: 25px;
+            text-align: justify;
+        }
+
+        /* Section Headings */
+        h3.section-title {
+            color: #174ea6;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+            margin-top: 30px;
+            font-size: 18px;
+            text-transform: uppercase;
+        }
+
+        /* Experience Items */
+        .job-block {
+            margin-bottom: 20px;
+        }
+
+        .job-header {
+            display: flex;
+            justify-content: space-between;
+            font-weight: bold;
+            font-size: 16px;
+            color: #174ea6;
+        }
+
+        .job-header .date {
+            color: #174ea6;
+            font-weight: normal;
+        }
+
+        .job-role {
+            font-size: 15px;
+            color: #174ea6;
+            margin-bottom: 5px;
+            font-weight: 500;
+        }
+
+        .job-intro {
+            font-style: italic;
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: #444;
+        }
+
+        ul {
+            margin-top: 5px;
+            padding-left: 20px;
+            font-size: 14px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        /* Skills Section Grid */
+        .skills-table {
+            display: table;
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        .skills-row {
+            display: table-row;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .skills-row:last-child {
+            border-bottom: none;
+        }
+
+        .skills-category {
+            display: table-cell;
+            width: 30%;
+            padding: 8px 0;
+            font-weight: bold;
+            font-size: 14px;
+            color: #333;
+            vertical-align: top;
+        }
+
+        .skills-list {
+            display: table-cell;
+            padding: 8px 0;
+            font-size: 14px;
+        }
+
+        /* Education */
+        .education-list {
+            list-style-type: disc;
+            margin-top: 10px;
+        }
+
+        /* New Footer Styles */
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 12px;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 20px;
+        }
+
+        .counter-number {
+            font-weight: bold;
+            font-size: 15px; /* Slightly larger for the views */
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 600px) {
+            .header, .job-header {
+                flex-direction: column;
+            }
+            .header-right {
+                text-align: left;
+                margin-top: 10px;
+            }
+            .skills-category, .skills-list {
+                display: block;
+                width: 100%;
+            }
+        }
+    </style>
 </head>
-
 <body>
-  <header class="header">
-    <img src="assets/krishna.jpg" alt="Profile Photo" class="profile-photo" />
-    <h1>Krishna AM</h1>
-    <h2>Solution Architect</h2>
-    <div class="social-links">
-      <a href="https://linkedin.com/in/YOUR-LINK" target="_blank">LinkedIn</a> •
-      <a href="https://github.com/YOUR-GITHUB" target="_blank">GitHub</a> •
-      <a href="mailto:YOUR-EMAIL@example.com">Email</a>
+
+    <div class="resume-container">
+        <!-- Header -->
+        <header>
+            <div class="header-left">
+                <h1>KRISHNA AM</h1>
+                <h2>Lead Platform Engineer | CKA Certified</h2>
+                <div class="subtitle">Specializing in Kubernetes Storage Platforms, Data Resilience & Hybrid Cloud Automation</div>
+            </div>
+            <div class="header-right">
+                krishna.am31@gmail.com | +91 9741144418<br>
+                GitHub URL: <a href="https://github.com/krishnaam-git" target="_blank">https://github.com/krishnaam-git</a>
+            </div>
+        </header>
+
+        <hr>
+
+        <!-- Summary -->
+        <div class="summary">
+            Senior Infrastructure Engineer with 13+ years of experience bridging the gap between Enterprise Storage (Dell ECS) and Cloud-Native Orchestration (Kubernetes). Specialized in designing resilient stateful platforms, automating zero-downtime upgrades, and enforcing data sovereignty compliance. CKA Certified and expert in Python/Terraform for infrastructure automation.
+        </div>
+
+        <!-- Experience -->
+        <h3 class="section-title">Professional Experience</h3>
+
+        <!-- Dell -->
+        <div class="job-block">
+            <div class="job-header">
+                <span>Dell EMC Corporation, Bangalore</span>
+                <span class="date">October 2022 — Present</span>
+            </div>
+            <div class="job-role">Reliability & Infrastructure Lead – Dell ECS (Elastic cloud storage)</div>
+            <div class="job-intro">
+                My primary role is engineering and owning the platform that automates infrastructure operations for the Dell ECS object storage product. My focus is on stability, scalability, and reducing manual work for other teams.
+            </div>
+            <ul>
+                <li>Orchestrated zero-downtime lifecycle management for stateful Kubernetes workloads (Dell ECS), managing Rolling Updates on OpenShift to ensure 99.999% availability during patching.</li>
+                <li>Led the architectural validation for migrating Petabyte-scale on-premise data to hybrid-cloud Kubernetes environments, identifying risks in network topology and latency.</li>
+                <li>Developed a Python & Jenkins based orchestration framework to automate multi-site cluster provisioning, reducing deployment time from 2 days to 4 hours.</li>
+                <li>Built and maintained key Grafana dashboards to monitor cluster I/O and performance, which was critical for faster incident detection and resolution during high-risk production changes.</li>
+                <li>Implemented Infrastructure-as-Code principles to standardize cluster configurations, enforcing security baselines (Policy-as-Code) across hybrid environments.</li>
+            </ul>
+        </div>
+
+        <!-- Nagra -->
+        <div class="job-block">
+            <div class="job-header">
+                <span>Nagra Vision Pvt Ltd (Kudelski Group), Bangalore</span>
+                <span class="date">May 2015 — October 2022</span>
+            </div>
+            <div class="job-role">Senior Automation Architect (DevOps & CI/CD)</div>
+            <div class="job-intro">
+                Here, my responsibility grew from test automation into designing and building the underlying platforms and CI/CD systems for all microservice development.
+            </div>
+            <ul>
+                <li>Designed and built a scalable CI/CD platform from the ground up for dozens of microservices, managing the full pipeline from code check-in to automated deployment on Kubernetes.</li>
+                <li>Architected the AWS EKS ephemeral environment strategy, using Terraform (or scripts) to spin up isolated microservices namespaces on-demand.</li>
+                <li>My deep understanding of test validation was key to building resilient pipelines that caught integration issues early, preventing them from reaching production.</li>
+                <li>Acted as the go-to person between developers and operations, ensuring the platform met their needs for both new feature delivery and stable operations.</li>
+            </ul>
+        </div>
+
+        <!-- Capgemini -->
+        <div class="job-block">
+            <div class="job-header">
+                <span>Capgemini India Pvt Ltd, Bangalore</span>
+                <span class="date">June 2013 — May 2015</span>
+            </div>
+            <div class="job-role">Quality Assurance Engineer</div>
+            <ul>
+                <li>Conducted end-to-end testing for core banking applications (AXA-HSBC). Developed test plans and initial automation scripts, which solidified my foundation in software quality.</li>
+            </ul>
+        </div>
+
+        <!-- Dhruv -->
+        <div class="job-block">
+            <div class="job-header">
+                <span>Dhruv Compusoft Consultancy Pvt Ltd, Bangalore</span>
+                <span class="date">February 2012 — May 2013</span>
+            </div>
+            <div class="job-role">System Administrator</div>
+            <ul>
+                <li>Administered AS400 systems, gaining experience in troubleshooting complex issues and optimizing system performance.</li>
+            </ul>
+        </div>
+
+        <!-- Skills -->
+        <h3 class="section-title">Skills & Expertise</h3>
+        <div class="skills-table">
+            <div class="skills-row">
+                <div class="skills-category">Orchestration & Cloud</div>
+                <div class="skills-list">Kubernetes (CKA), OpenShift, Docker, Helm, AWS (EKS, S3, IAM)</div>
+            </div>
+            <div class="skills-row">
+                <div class="skills-category">CI/CD & Automation</div>
+                <div class="skills-list">Jenkins, GitLab CI, GitHub Actions, Python, Shell Scripting, Puppet</div>
+            </div>
+            <div class="skills-row">
+                <div class="skills-category">Observability & Monitoring</div>
+                <div class="skills-list">Grafana, Prometheus</div>
+            </div>
+            <div class="skills-row">
+                <div class="skills-category">Infrastructure & Code</div>
+                <div class="skills-list">Terraform, Python (Boto3), Ansible, Linux (Red Hat/Ubuntu).</div>
+            </div>
+        </div>
+
+        <!-- Certifications -->
+        <h3 class="section-title">Certification & Education</h3>
+        <ul class="education-list">
+            <li>Certified Kubernetes Administrator (CKA) - The Linux Foundation (Valid till Nov 2026)</li>
+            <li>Bachelor of Engineering, Information Science | Mangalore Institute of Technology and Engineering</li>
+        </ul>
+
+        <!-- FOOTER SECTION UPDATED -->
+        <footer>
+            <p class="counter-number">👁️ Views: Loading...</p>
+            <p>© 2025 Krishna AM. Built with HTML & CSS. Hosted on AWS S3</p>
+        </footer>
+
     </div>
-  </header>
 
-  <main>
-    <section id="summary">
-      <h3>Summary</h3>
-      <p>Cloud Engineer with 13+ years of experience, specialising in building and automating the core infrastructure that
-developers rely on. CKA certified, with deep, hands-on expertise in Kubernetes, OpenShift, and enterprise-scale CI/CD systems. My focus is
-on improving system reliability and developer velocity by treating infrastructure as a product, ensuring it is scalable, resilient, and easy to
-use.</p>
-    </section>
-
-    <section id="experience">
-      <h3>Experience</h3>
-
-      <div class="job">
-        <h4>Solution Architect – Dell EMC</h4>
-        <span class="duration">2021 – Present</span>
-        <ul>
-          <li>Architected ECS multi-site upgrade automation framework integrating Jenkins, Robot Framework, and Kubernetes-based CI/CD pipelines.</li>
-          <li>Led modernization of object storage deployments using Helm, OpenShift, and CSI for Kubernetes-native storage product “Object”.</li>
-          <li>Partnered with cross-functional teams to define roadmap and execution for upgrade orchestration and customer readiness validation systems.</li>
-        </ul>
-      </div>
-
-      <div class="job">
-        <h4>Software Engineer – Nagravision</h4>
-        <span class="duration">2016 – 2021</span>
-        <ul>
-          <li>Developed upgrade automation pipelines integrating Groovy, Jenkins, and Slack notifications for multi-site ECS systems.</li>
-          <li>Implemented health-check automation using Robot Framework and data integrity validation tools.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="skills">
-      <h3>Skills</h3>
-      <ul class="skills-list">
-        <li>Python, Jenkins, Groovy</li>
-        <li>Kubernetes, Docker, Helm</li>
-        <li>AWS, Terraform, CI/CD</li>
-		<li>Grafana, Dell iDRAC, Linux</li>
-      </ul>
-    </section>
-
-    <section id="projects">
-      <h3>Projects</h3>
-      <ul>
-        <li><b>ECS Upgrade Orchestration System:</b> Multi-site automation pipeline for upgrades and validation.</li>
-        <li><b>Kubernetes-Native Object Storage:</b> Helm-deployed modular object storage platform on OpenShift.</li>
-      </ul>
-    </section>
-	
-	<section id="Certifications">
-      <h3>Certifications</h3>
-      <p><strong>Certified Kubernetes Administrator, The Linux Foundation</strong></p>
-    </section>
-
-    <section id="education">
-      <h3>Education</h3>
-      <p><strong>Bachelor of Engineering, Information Science</strong><br/>VTU, 2011</p>
-    </section>
-
-    <section id="contact">
-      <h3>Contact</h3>
-      <p>📧 krishna.am31@gmail.com | 📞 +91-XXXXXXXXXX </p>
-    </section>
-  </main>
-
-  <footer>
-	<p class="counter-number">👁️ Views: Loading...</p>
-    <p>© 2025 Krishna AM. Built with HTML & CSS. Hosted on AWS S3</p>
-  </footer>
-  <script src="./index.js"></script>
+    <!-- Script for API interaction -->
+    <script src="./index.js"></script>
 </body>
 </html>
