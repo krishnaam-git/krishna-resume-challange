@@ -13,19 +13,18 @@ You can view the live site here: **[Insert Your CloudFront URL Here]**
 
 The application uses a serverless event-driven architecture. Below is a high-level overview of how the components interact:
 
-```mermaid
 graph TD
     User((Visitor))
     
     subgraph "Frontend Architecture"
         CF[CloudFront Distribution]
-        S3[S3 Bucket\n(Static Website)]
+        S3["S3 Bucket <br> (Static Website)"]
     end
     
     subgraph "Backend Architecture"
         APIG[API Gateway]
-        Lambda[AWS Lambda\n(Python/Boto3)]
-        DDB[(DynamoDB Table)]
+        Lambda["AWS Lambda <br> (Python/Boto3)"]
+        DDB[("DynamoDB Table")]
     end
 
     subgraph "CI/CD Pipeline"
@@ -45,6 +44,7 @@ graph TD
     GH -- "Syncs Static Files" --> S3
     GH -- "Invalidates Cache" --> CF
 
+    
 Data Flow & Technical Details
 Here is the detailed breakdown of how the request travels from the user to the database and back:
 1. The Frontend (Static Content)
