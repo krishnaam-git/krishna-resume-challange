@@ -75,6 +75,5 @@ While the standard implementation utilizes AWS Route 53 for custom domain manage
 
 **Why?**
 - **Cost Efficiency:** Route 53 Hosted Zones incur a monthly flat fee ($0.50/month + query costs). By utilizing the CloudFront domain, the project runs effectively on the AWS Free Tier, adhering to the "Cost Optimization" pillar of the AWS Well-Architected Framework.
-- **Security:** SSL/HTTPS is still strictly enforced via the CloudFront default certificate (`*.cloudfront.net`), ensuring encrypted traffic without the need to purchase or manage a custom TLS certificate.
 
 
